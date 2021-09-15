@@ -20,6 +20,7 @@ namespace message.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult SendEmail(string usermail)
         {
@@ -29,5 +30,13 @@ namespace message.Controllers
             WebMail.Send(usermail, subject, body, null, null);
             return View();
         }
+
+        [HttpGet]
+        public ActionResult GetRandom()
+        {
+            return Json(new { random = new Random().Next(20) }, JsonRequestBehavior.AllowGet);
+        }
+
+
     }
 }
