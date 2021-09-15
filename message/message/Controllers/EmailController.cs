@@ -27,8 +27,6 @@ namespace message.Controllers
             string body = "this is a body part of mail";
 
             WebMail.Send(usermail, subject, body, null, null);
-            @ViewBag.msg = "Email";
-            @ViewBag.msg = "Email Sended !!";
             return View();
         }
     }
